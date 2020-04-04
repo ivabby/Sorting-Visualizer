@@ -7,26 +7,32 @@
         <title>Sorting Visualizer</title>
     </head>
     <body>
-        <div class="navbar">
-            <ul>
-                <li><a href="#">Generate New Array</a></li>
-            </ul>
+        <div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#" onclick="generateArrayValues();">Generate New Array</a></li>
+                </ul>
 
-            <ul style="margin-left:50px">
-                <li><a href="#">Change Array Size</a></li>
-            </ul>
-            <div class="slidecontainer">
-                <input type="range" min="4" max="25" value="5" class="slider" id="myRange">
+                <p>Change Array Size</p>
+                <div class="slidecontainer">
+                    <input type="range" min="4" max="20" value="4" class="slider" id="myRange">
+                </div>
+
+                <ul style="margin-left:50px">
+                    <li><a href="#">Selection Sort</a></li>
+                    <li><a href="#">Bubble Sort</a></li>
+                </ul>
             </div>
 
-            <ul style="margin-left:50px">
-                <li><a href="#">Selection Sort</a></li>
-                <li><a href="#">Bubble Sort</a></li>
-            </ul>
         </div>
 
-        <h1 id="demo">4</h1>
 
+        <div class="sorting">
+            <!-- <h1 id="output">2,3,4,5</h1> -->
+            <div class="container">
+                <table id="myTable"></table>
+            </div>
+        </div>
         <script src="script.js" charset="utf-8"></script>
     </body>
 </html>
