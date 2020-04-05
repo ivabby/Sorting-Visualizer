@@ -112,3 +112,16 @@ td{
     padding: 10px;
     font-size: 40px;
 }
+
+#start{
+    display: inline-block;
+    font-size: 19px;
+    outline: none;
+    border: none;
+    width: 80px;
+    text-align: center;
+    margin-left: 50px;
+    text-decoration: none;
+    background-color: #00008b;
+    color: white;
+}
