@@ -1,6 +1,8 @@
 var slider = document.getElementById("myRange");
 // var output = document.getElementById("output");
 var table = document.getElementById("myTable");
+let dropdown = document.getElementById("dropdown");
+let start = document.getElementById("start");
 
 size = slider.value;
 let array = []
@@ -20,6 +22,7 @@ function generateArrayValues(){
     tableData = "<table><tr>";
     for(let i=0;i<size;i++){
         number = Math.floor(Math.random() * 100) + 1;
+        if(number == 100) number--;
         array.push(number);
         tableData += "<td>" + number + "</td>";
     }
@@ -31,58 +34,26 @@ function generateArrayValues(){
 function sortingStart(){
     console.log("hi");
     let start = document.getElementById("start");
-    start.style["color"] = "red";
+    // start.style["color"] = "red";
+    // start.disabled = true;
 
-    SelectionSort();
+    let choice = document.getElementById("dropdown").value;
+    console.log(choice);
 
-    setTimeout(function(){
-            start.style["color"] = "white";
-    },(size - 1)*2000);
-}
-
-function swapValue(i,j)
-{
-    let t = array[i];
-    array[i] = array[j];
-    array[j] = t;
-
-
-    setTimeout(function () {
-        table.rows[0].cells[i].style["background-color"] = "red";
-        table.rows[0].cells[j].style["background-color"] = "red";
-    },800);
-
-    setTimeout(function(){
-        table.rows[0].cells[i].innerHTML = array[i];
-        table.rows[0].cells[j].innerHTML = array[j];
-
-        table.rows[0].cells[i].style["background-color"] = "green";
-        table.rows[0].cells[j].style["background-color"] = "green";
-    },1500);
-}
-
-function SelectionSort(){
-
-    for(let i=0;i<size-1;i++)
-    {
-
-        setTimeout(function(){
-            minIndex = i;
-            table.rows[0].cells[i].style["background-color"] = "#0098cc";
-            for(let j = i+1; j<size; j++)
-                if(array[j] < array[minIndex])
-                    minIndex = j;
-
-            if(minIndex != i)
-            {
-                setTimeout(swapValue(i,minIndex,500),500);
-            }
-            else{
-                setTimeout(function(){
-                    table.rows[0].cells[i].style["background-color"] = "green";
-                },1500);
-            }
-        },2000*i);
+    switch (choice) {
+        case "SelectionSort":
+            SelectionSort();
+            break;
+        case "BubbleSort":
+            BubbleSort();
+            break;
+        default:
+            console.log("Wrong Choice");
     }
 
 }
+
+dropdown.addEventListener("input" , function(){
+    console.log(dropdown.value);
+    start.style["visibility"] = "visible";
+});

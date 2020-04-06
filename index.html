@@ -18,23 +18,27 @@
                     <input type="range" min="4" max="20" value="4" class="slider" id="myRange">
                 </div>
 
-                <ul style="margin-left:50px">
-                    <li><a href="#">Selection Sort</a></li>
-                    <li><a href="#">Bubble Sort</a></li>
-                </ul>
+                <p>Sorting Technique</p>
 
-                <button id="start" onclick="sortingStart();">Start</button>
+                <select id="dropdown">
+                    <option value="" hidden selected disabled>Choose</option>
+                    <option value="SelectionSort">Selection Sort</option>
+                    <option value="BubbleSort">Bubble Sort</option>
+                </select>
+
+                <button id="start" onclick="sortingStart();" style="visibility:hidden">Start</button>
             </div>
 
         </div>
 
 
         <div class="sorting">
-            <!-- <h1 id="output">2,3,4,5</h1> -->
             <div class="container">
                 <table id="myTable"></table>
             </div>
         </div>
         <script src="script.js" charset="utf-8"></script>
+        <script src="SelectionSort.js" charset="utf-8"></script>
+        <script src="BubbleSort.js" charset="utf-8"></script>
     </body>
 </html>

@@ -108,6 +108,7 @@ table , td{
 }
 
 td{
+    width: 50px;
     color: white;
     padding: 10px;
     font-size: 40px;
@@ -124,4 +125,12 @@ td{
     text-decoration: none;
     background-color: #00008b;
     color: white;
+}
+
+#dropdown{
+    font-size: 19px;
+    padding: 2px;
+    box-sizing: content-box;
+    margin-left: 15px;
+    width: auto;
 }
