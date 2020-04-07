@@ -44,10 +44,14 @@ function BubbleSort(){
                     }
                 },j*1800);
             }
-            
         },time);
 
-        time = time + (size-i-1)*2000-100;
+        time = time + (size-i-1)*1900;
         console.log(time);
     }
+
+    //  Time for which the buttons should be disabled
+    setTimeout(function(){
+        enableButtons();
+    },time-200);
 }

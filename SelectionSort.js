@@ -1,10 +1,3 @@
-
-function check(i,j,size){
-    let start = document.getElementById("start");
-    start.style["color"] = "white";
-    start.disabled = false;
-}
-
 function swapValue(i,j)
 {
     let t = array[i];
@@ -26,7 +19,6 @@ function swapValue(i,j)
 }
 
 function SelectionSort(){
-    f = false;
     for(let i=0;i<size-1;i++)
     {
         setTimeout(function(){
@@ -43,9 +35,13 @@ function SelectionSort(){
             else{
                 setTimeout(function(){
                     table.rows[0].cells[i].style["background-color"] = "green";
-
                 },1600);
             }
         },2000*i);
     }
+
+    //  Time for which the buttons should be disabled
+    setTimeout(function(){
+        enableButtons();
+    },size*2000-2000);
 }

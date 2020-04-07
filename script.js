@@ -1,8 +1,8 @@
 var slider = document.getElementById("myRange");
-// var output = document.getElementById("output");
 var table = document.getElementById("myTable");
 let dropdown = document.getElementById("dropdown");
 let start = document.getElementById("start");
+let generateNewValue = document.getElementById("generateNewValue");
 
 size = slider.value;
 let array = []
@@ -32,10 +32,8 @@ function generateArrayValues(){
 }
 
 function sortingStart(){
-    console.log("hi");
-    let start = document.getElementById("start");
-    // start.style["color"] = "red";
-    // start.disabled = true;
+
+    disableButtons();
 
     let choice = document.getElementById("dropdown").value;
     console.log(choice);
@@ -50,10 +48,31 @@ function sortingStart(){
         default:
             console.log("Wrong Choice");
     }
-
 }
 
 dropdown.addEventListener("input" , function(){
     console.log(dropdown.value);
     start.style["visibility"] = "visible";
 });
+
+function disableButtons(){
+    start.style["color"] = "red";
+    start.disabled = true;
+    generateNewValue.disabled = true;
+    generateNewValue.style["color"] = "red";
+    // myRange.style["color"] = "red";
+    myRange.disabled = true;
+    dropdown.style["color"] = "red";
+    dropdown.disabled = true;
+}
+
+function enableButtons(){
+    generateNewValue.disabled = false;
+    generateNewValue.style["color"] = "white";
+    start.style["color"] = "white";
+    start.disabled = false;
+    // myRange.style["color"] = "white";
+    myRange.disabled = false;
+    dropdown.style["color"] = "black";
+    dropdown.disabled = false;
+}

@@ -114,12 +114,12 @@ td{
     font-size: 40px;
 }
 
-#start{
+#start, #generateNewValue{
     display: inline-block;
     font-size: 19px;
     outline: none;
     border: none;
-    width: 80px;
+    width: max-content;
     text-align: center;
     margin-left: 50px;
     text-decoration: none;
