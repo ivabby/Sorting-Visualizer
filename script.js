@@ -45,6 +45,9 @@ function sortingStart(){
         case "BubbleSort":
             BubbleSort();
             break;
+        case "InsertionSort":
+                InsertionSort();
+                break;
         default:
             console.log("Wrong Choice");
     }
